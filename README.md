@@ -4,5 +4,5 @@
 ## Download PHASER
 <a href="https://phaser.io/download">¿Where can I download PHASER?</a>
 
-## Official repoistory PHASER
+## Official repository PHASER
 <a href="https://github.com/photonstorm/phaser">For extra information</a>
