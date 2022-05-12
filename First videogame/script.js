@@ -24,25 +24,23 @@ function preload() {
 
 function create() {
 
-  this.add.image(400, 300, 'sky'); //  A simple background for our game
-  platforms = this.physics.add.staticGroup(); // Group of platforms which contains the ground and the 2 ledges we can jump on
+  this.add.image(400, 300, 'sky'); // A simple background for our game
+  platforms = this.physics.add.staticGroup(); // Group of platforms which contains the ground and the 2 ledges
 
-  //  Create the ground and scale it to fit the width of the game
-  platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+  platforms.create(400, 568, 'ground').setScale(2).refreshBody(); // Create the ground and scale it to fit the width of the game
 
-  //  Now let's create some ledges
+  // Now let's create some ledges
   platforms.create(600, 400, 'ground');
   platforms.create(50, 250, 'ground');
   platforms.create(750, 220, 'ground');
 
-  // The player and its settings
-  player = this.physics.add.sprite(100, 450, 'dude');
+  player = this.physics.add.sprite(100, 450, 'dude'); // The player and its settings
 
-  //  Player physics properties. Give the little guy a slight bounce.
+  // Player physics properties. Give the little guy a slight bounce.
   player.setBounce(0.2);
   player.setCollideWorldBounds(true);
 
-  //  Our player animations, turning, walking left and walking right.
+  // Our player animations, turning, walking left and walking right.
   this.anims.create({
     key: 'left', frames: this.anims.generateFrameNumbers('dude', {start: 0, end: 3}),
     frameRate: 10, repeat: -1
@@ -55,9 +53,9 @@ function create() {
     frameRate: 10, repeat: -1
   });
 
-  cursors = this.input.keyboard.createCursorKeys(); //  Input Events
+  cursors = this.input.keyboard.createCursorKeys(); // Input Events
 
-  //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
+  // Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
   stars = this.physics.add.group({
     key: 'star', repeat: 11, setXY: {x: 12, y: 0, stepX: 70}
   });
@@ -70,7 +68,7 @@ function create() {
 
   scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
 
-  //  Collide the player and the stars with the platforms
+  // Collide the player and the stars with the platforms
   this.physics.add.collider(player, platforms);
   this.physics.add.collider(stars, platforms);
   this.physics.add.collider(bombs, platforms);
@@ -95,15 +93,16 @@ function update() {
     player.anims.play('turn');
   }
 
-  if (cursors.up.isDown && player.body.touching.down) {player.setVelocityY(-330);}
+  if (cursors.up.isDown && player.body.touching.down) {
+    player.setVelocityY(-330);
+  }
 }
 
 function collectStar(player, star) {
 
   star.disableBody(true, true);
 
-  // Add and update the score
-  score += 10;
+  score += 10; // Add and update the score
   scoreText.setText('Score: ' + score);
 
   if (stars.countActive(true) === 0) {
