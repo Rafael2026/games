@@ -1,11 +1,11 @@
 ## PHASER website
-<a href="https://phaser.io/">Official website</a>
+[Official website](https://phaser.io/)
 
 ## Download PHASER
-<a href="https://phaser.io/download">¿Where can I download PHASER?</a>
+[¿Where can I download PHASER?](https://phaser.io/download)
 
 ## Official repository PHASER
-<a href="https://github.com/photonstorm/phaser">For extra information</a>
+[For extra information](https://github.com/photonstorm/phaser)
 
 ## Course for beginners
 [JS Game Development](https://www.youtube.com/watch?v=GFO_txvwK_c)

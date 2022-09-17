@@ -1,7 +1,11 @@
-var config = {type: Phaser.AUTO, width: 800, height: 600,
+var config = {
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
 
-  physics: {default: 'arcade', arcade: {gravity: {y: 300}, debug: false}},
-  scene: {preload: preload, create: create, update: update}
+  physics: { default: 'arcade', arcade: { gravity: { y: 300 }, debug: false } },
+
+  scene: { preload: preload, create: create, update: update }
 };
 
 var player;
@@ -19,7 +23,7 @@ function preload() {
   this.load.image('ground', 'img/platform.png');
   this.load.image('star', 'img/star.png');
   this.load.image('bomb', 'img/bomb.png');
-  this.load.spritesheet('dude', 'img/dude.png', {frameWidth: 32, frameHeight: 48});
+  this.load.spritesheet('dude', 'img/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
 
 function create() {
@@ -42,22 +46,22 @@ function create() {
 
   // Our player animations, turning, walking left and walking right.
   this.anims.create({
-    key: 'left', frames: this.anims.generateFrameNumbers('dude', {start: 0, end: 3}),
-    frameRate: 10, repeat: -1
+    key: 'left', frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }), frameRate: 10, repeat: -1
   });
 
-  this.anims.create({key: 'turn', frames: [{key: 'dude', frame: 4}], frameRate: 20});
+  this.anims.create(
+    { key: 'turn', frames: [ { key: 'dude', frame: 4} ], frameRate: 20 }
+  );
 
   this.anims.create({
-    key: 'right', frames: this.anims.generateFrameNumbers('dude', {start: 5, end: 8}),
-    frameRate: 10, repeat: -1
+    key: 'right', frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 } ), frameRate: 10, repeat: -1
   });
 
   cursors = this.input.keyboard.createCursorKeys(); // Input Events
 
   // Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
   stars = this.physics.add.group({
-    key: 'star', repeat: 11, setXY: {x: 12, y: 0, stepX: 70}
+    key: 'star', repeat: 11, setXY: { x: 12, y: 0, stepX: 70 }
   });
 
   stars.children.iterate(function (child) {
@@ -93,9 +97,7 @@ function update() {
     player.anims.play('turn');
   }
 
-  if (cursors.up.isDown && player.body.touching.down) {
-    player.setVelocityY(-330);
-  }
+  if (cursors.up.isDown && player.body.touching.down) { player.setVelocityY(-330); }
 }
 
 function collectStar(player, star) {
