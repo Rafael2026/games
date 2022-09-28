@@ -1,11 +1,3 @@
-## PHASER website
-[Official website](https://phaser.io/)
+## Videogames
+You can see different videogames technologies in this repository
 
-## Download PHASER
-[¿Where can I download PHASER?](https://phaser.io/download)
-
-## Official repository PHASER
-[For extra information](https://github.com/photonstorm/phaser)
-
-## Course for beginners
-[JS Game Development](https://www.youtube.com/watch?v=GFO_txvwK_c)
