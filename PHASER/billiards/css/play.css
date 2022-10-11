@@ -2014,36 +2014,6 @@ canvas { touch-action: none; }
   z-index: 900010
 }
 
-@-webkit-keyframes fg-rotation {
-  10% {
-    -webkit-transform: rotate(0deg)
-  }
-
-  30% {
-    -webkit-transform: rotate(90deg)
-  }
-
-  70% {
-    -webkit-transform: rotate(90deg)
-  }
-
-  90% {
-    -webkit-transform: rotate(0deg)
-  }
-}
-
-@-webkit-keyframes fg-fade-spinner {
-  0% {
-    opacity: .6
-  }
-
-  15% { opacity: 1; }
-
-  60% { opacity: 1; }
-
-  100% { opacity: 0.6; }
-}
-
 @media only screen and (orientation: landscape) {
 
   #fg-root.fg-orientation-portrait #fg-portrait-overlay {
@@ -2135,8 +2105,7 @@ canvas { touch-action: none; }
   transition: none;
 }
 
-#fg-root .fg-screenshot-btn-upload.fg-screenshot-btn-loading svg,
-#fg-root .fg-screenshot-btn-loading.fg-screenshot-btn-discard svg {
+#fg-root .fg-screenshot-btn-upload.fg-screenshot-btn-loading svg, #fg-root .fg-screenshot-btn-loading.fg-screenshot-btn-discard svg {
   fill: #000;
   opacity: 0.6;
 }

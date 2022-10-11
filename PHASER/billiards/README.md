@@ -1,5 +1,5 @@
 ## Deploy
-PHASER Billiards: [Play game](https://rafael2026.github.io/PHASER/billiards)
+PHASER Billiards: [Play game](https://rafael2026.github.io/games/PHASER/billiards)
 
 ## Robots
 - User-agent: *

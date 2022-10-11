@@ -1,0 +1,8 @@
+html, body {
+  background: #000;
+  color: #ff7;
+  font: 14px/1.2 Arial, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+.fg-preroll-trigger { cursor: pointer; }
