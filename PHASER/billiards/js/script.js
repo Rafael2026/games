@@ -1,4 +1,3 @@
-
 (function () {
   var body = document.getElementsByTagName('body')[0],
     gameId = "82038e98-d4e1-46dd-8de9-1460d1395eab",
@@ -225,5 +224,3 @@
 
   initRedirect(getLinkToGame());
 })();
-
-famobi_dataLayer = window.famobi_dataLayer || window.dataLayer || [];
