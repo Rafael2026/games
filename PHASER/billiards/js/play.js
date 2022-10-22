@@ -1,10 +1,15 @@
 "use strict";
 
 function __(key, data) {
-  var i = 0, str = "", j = 1, rx;
-  key = key + "";
+  
+  var i = 0;
+  var str = "";
+  var j = 1;
+  var rx;
+  var key = key + "";
 
   if (key.indexOf("|") == -1) {
+
     if (!data) {
       str = app.modules.i18n.getTranslation(key);
       return str;
@@ -20,13 +25,17 @@ function __(key, data) {
   str = app.modules.i18n.getTranslation(key);
 
   for (i in data) {
+
     if (typeof data[i] === "object") {
+
       var k;
+
       for (k in data[i]) {
         rx = new RegExp("%" + k.toUpperCase());
         str = str.replace(rx, data[i][k]);
         str = str.replace(/%s/, data[i]);
       }
+
     } else {
       j = Number(i) + 1;
       rx = new RegExp("%" + j);
@@ -39,6 +48,7 @@ function __(key, data) {
 }
 
 function nl2br(str) {
+
   str = (str && str.length) ? jQuery.trim(str) : "";
 
   return str.replace(/\n/g, "<br>");
@@ -53,6 +63,7 @@ function numFormat(n) {
 }
 
 function dataToAttr(data) {
+
   var out = '';
 
   for (var idx in data) {
@@ -68,17 +79,20 @@ function getBaseUrl() {
 }
 
 function getQRCodeForUrl(url, width, height) {
-  var w = width || 150,
-    h = height || 150;
+
+  var w = width || 150;
+  var h = height || 150;
+
   return "http://chart.apis.google.com/chart?chs=" + w + "x" + h + "&cht=qr&chl=" + encodeURI(url);
 }
 
 function getQueryParams(qs) {
+  
   qs = qs.split("+").join(" ");
 
-  var params = {},
-    tokens,
-    re = /[?&]?([^=]+)=([^&]*)/g;
+  var params = {};
+  var tokens;
+  var re = /[?&]?([^=]+)=([^&]*)/g;
 
   while (tokens = re.exec(qs)) {
     params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
@@ -88,22 +102,21 @@ function getQueryParams(qs) {
 }
 
 function sizeOf(data) {
+
   var length = 0;
   var prop;
 
-  if (!data) {
-    return length;
-  }
+  if (!data) { return length; }
 
-  if (typeof data.length != 'undefined') {
-    return data.length;
-  }
+  if (typeof data.length != 'undefined') { return data.length; }
 
+  // available since ECMAScript 5 and in some browser 10x faster
   if (Object.keys) {
-    // available since ECMAScript 5 and in some browser 10x faster
     length = Object.keys(data).length;
   } else {
+
     for (prop in data) {
+
       if (data.hasOwnProperty(prop)) {
         length++;
       }
@@ -117,22 +130,27 @@ function splitNewlines(string) {
 }
 
 function htmlSpecialChars(string) {
+
   string = string.replace(/</g, '&lt;').replace(/>/g, '&gt;');
   string = string.replace(/'/g, '&#039;');
   string = string.replace(/"/g, '&quot;');
+
   return string;
 }
 
 var app__viewport = {};
 
 function getViewport(force) {
-  var o = getOrientation(),
-    x = window.innerWidth,
-    y = window.innerHeight;
+
+  var o = getOrientation();
+  var x = window.innerWidth;
+  var y = window.innerHeight;
 
   if (!app__viewport.hasOwnProperty(o) || force) {
+
     app__viewport[o] = {};
     app__viewport[o].orientation = o;
+
     if (o == 'landscape') {
       app__viewport[o].width = Math.max(x, y);
       app__viewport[o].height = Math.min(x, y);
@@ -150,25 +168,30 @@ function getViewport(force) {
 }
 
 function getOrientation() {
+
   var orientationMatch = window.matchMedia('all and (orientation:landscape)');
 
-  if (orientationMatch && orientationMatch.matches === true)
+  if (orientationMatch && orientationMatch.matches === true) {
     return 'landscape';
+  }
+
   return 'portrait';
 }
 
 function playGif(gifContainer) {
+
   var $gifContainer;
   var $img;
   var $play;
   var imgSrc;
-  if (!gifContainer) {
-    return;
-  }
+
+  if (!gifContainer) { return; }
+
   $gifContainer = jQuery(gifContainer);
   $img = $gifContainer.find("img");
   $play = $gifContainer.find("span.play");
   imgSrc = $img.attr("src");
+
   if ($img.data("alt")) {
     $play.toggle();
     $img.attr("src", $img.data("alt"));
@@ -184,7 +207,8 @@ storageFallback.prototype.setItem = function (key, value) {
   this.storage[key] = value;
 };
 
-storageFallback.prototype.getItem = function (key) {
+storageFallback.prototype.getItem = function(key) {
+
   try {
     return this.storage[key];
   } catch (e) {
@@ -192,7 +216,8 @@ storageFallback.prototype.getItem = function (key) {
   }
 };
 
-storageFallback.prototype.removeItem = function (key) {
+storageFallback.prototype.removeItem = function(key) {
+
   try {
     delete this.storage[key];
     return true;
@@ -201,7 +226,8 @@ storageFallback.prototype.removeItem = function (key) {
   }
 };
 
-storageFallback.prototype.clear = function () {
+storageFallback.prototype.clear = function() {
+
   try {
     this.storage = {};
     return true;

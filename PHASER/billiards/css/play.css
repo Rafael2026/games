@@ -105,8 +105,7 @@ canvas { touch-action: none; }
   text-indent: -10000px;
 }
 
-#fg-root #fg-overlay .fg-clip-btn span:before,
-#fg-root #fg-overlay .fg-clip-btn span:after {
+#fg-root #fg-overlay .fg-clip-btn span:before, #fg-root #fg-overlay .fg-clip-btn span:after {
   content: '';
   margin-left: 0;
   position: absolute;
@@ -249,7 +248,7 @@ canvas { touch-action: none; }
 
 #fg-root #fg-overlay.fa-lang-shown ul.fg-langs li.fg-lang a svg { display: none; }
 
-#fg-root #fg-overlay.fa-lang-shown ul.fg-langs li.fg-lang.fg-lang-selected a .fg-flag { margin: 4px 0 0; }
+#fg-root #fg-overlay.fa-lang-shown ul.fg-langs li.fg-lang.fg-lang-selected a.fg-flag { margin: 4px 0 0; }
 
 #fg-root #fg-overlay.fa-lang-shown ul.fg-langs li.fg-lang.fg-lang-selected a svg { display: none; }
 
@@ -297,17 +296,11 @@ canvas { touch-action: none; }
   background: #fff
 }
 
-#fg-root #fg-overlay.navigation-view .fg-clip .fg-clip-btn span:before {
-  transform: rotate(45deg);
-}
+#fg-root #fg-overlay.navigation-view .fg-clip .fg-clip-btn span:before { transform: rotate(45deg); }
 
-#fg-root #fg-overlay.navigation-view .fg-clip .fg-clip-btn span:after {
-  transform: rotate(-45deg);
-}
+#fg-root #fg-overlay.navigation-view .fg-clip .fg-clip-btn span:after { transform: rotate(-45deg); }
 
-#fg-root #fg-overlay.navigation-view ul.fg-related-games li {
-  margin-left: 5px;
-}
+#fg-root #fg-overlay.navigation-view ul.fg-related-games li { margin-left: 5px; }
 
 #fg-root .fg-app-overlay {
   position: fixed;
@@ -1792,7 +1785,7 @@ canvas { touch-action: none; }
   height: 46px;
   margin: 0 auto;
   text-indent: -10000px;
-  background: url(../../images/StoreButtons.sprite.png) no-repeat center 0;
+  background: url(../../img/StoreButtons.sprite.png) no-repeat center 0;
   background-size: auto 183px
 }
 
@@ -1855,8 +1848,7 @@ canvas { touch-action: none; }
   #fg-apps article ul.storeLinks { margin-top: 30px; }
 }
 
-#fg-root #fg-landscape-overlay,
-#fg-root #fg-portrait-overlay {
+#fg-root #fg-landscape-overlay, #fg-root #fg-portrait-overlay {
   z-index: 99900;
   display: none;
   position: fixed;
@@ -1867,7 +1859,7 @@ canvas { touch-action: none; }
   width: 0;
   height: 0;
   overflow: hidden;
-  background: #ddd url(https://img.cdn.famobi.com/html5games/gameapi/v1/images/RotateArrow.png) center center no-repeat;
+  background: #ddd url(https://img.cdn.famobi.com/html5games/gameapi/v1/img/RotateArrow.png) center center no-repeat;
   background-size: 145px 145px;
   box-shadow: inset 0 0 100px #333
 }
@@ -1959,8 +1951,7 @@ canvas { touch-action: none; }
   border: 1px solid #ccc;
 }
 
-#fg-root .fg-screenshot-btn-upload,
-#fg-root .fg-screenshot-btn-discard {
+#fg-root .fg-screenshot-btn-upload, #fg-root .fg-screenshot-btn-discard {
   position: absolute;
   top: 0;
   left: 50.5%;
@@ -1973,8 +1964,7 @@ canvas { touch-action: none; }
   margin: auto;
 }
 
-#fg-root .fg-screenshot-btn-upload:after,
-#fg-root .fg-screenshot-btn-discard:after {
+#fg-root .fg-screenshot-btn-upload:after, #fg-root .fg-screenshot-btn-discard:after {
   content: '';
   display: block;
   width: 100%;
@@ -1982,8 +1972,7 @@ canvas { touch-action: none; }
   margin-bottom: 100%
 }
 
-#fg-root .fg-screenshot-btn-upload svg,
-#fg-root .fg-screenshot-btn-discard svg {
+#fg-root .fg-screenshot-btn-upload svg, #fg-root .fg-screenshot-btn-discard svg {
   position: absolute;
   left: 0;
   top: 15%;
@@ -2003,7 +1992,7 @@ canvas { touch-action: none; }
   display: block;
   height: 0;
   background-color: green;
-  opacity: .4;
+  opacity: 0.4;
   transition: none
 }
 
@@ -2028,7 +2017,7 @@ canvas { touch-action: none; }
 #fg-root .fg-screenshot-btn-upload.fg-screenshot-btn-loading-fail:before,
 #fg-root .fg-screenshot-btn-loading-fail.fg-screenshot-btn-discard:before {
   transition: none;
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   height: 100%;
 }
 
