@@ -8,6 +8,11 @@ let frameX = 0;
 let frameY = 5;
 let gameFrame = 0;
 let staggerFrames = 5;
+const spriteAnimarions = [];
+const animationStates = [
+  { name: 'idle', frames: 7, },
+  { name: 'jump', frames: 7, }
+];
 
 playerImage.src = 'img/shadowDog.png';
 canvas.width = 600;
@@ -21,8 +26,9 @@ function animate() {
   //ctx.drawImage(playerImage, 50, 50);
 
   let position = Math.floor(gameFrame/staggerFrames) % 6;
+  frameX = spriteWidth * position;
 
-  ctx.drawImage(playerImage, (frameX * spriteWidth), (frameY * spriteHeight), spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
+  ctx.drawImage(playerImage, frameX, (frameY * spriteHeight), spriteWidth, spriteHeight, 0, 0, spriteWidth, spriteHeight);
   
   /*if (gameFrame%staggerFrames == 0) {
 
